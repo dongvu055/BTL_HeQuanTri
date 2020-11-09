@@ -9,10 +9,10 @@ dn.onclick = function () {
     dn_dl.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let res_1 = this.responseText;
+            console.log(res_1);
             tk.value = null;
             mk.value = null;
-            if (res_1 == "1") {
-                console.log(res_1);
+            if (res_1 == "Co") {
                 chuyenhuong.click();
             } else {
                 console.log("Chua duoc");

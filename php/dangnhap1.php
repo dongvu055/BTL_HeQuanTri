@@ -7,5 +7,7 @@
     $sql = "SELECT * FROM admin WHERE status='on'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_num_rows($result);
-    $sql1 = "UPDATE admin SET status='off'";
-    $result = mysqli_query($conn,$sql1);
+    while($kq = mysqli_fetch_assoc($result))
+    {
+        echo $kq['user'];
+    }

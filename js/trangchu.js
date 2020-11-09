@@ -1,5 +1,5 @@
 //Các biến toàn cục chủ đạo
-let user = "";
+// let user = "";
 let khungdn = document.getElementsByClassName("khungdn")[0];
 let dn = document.getElementsByClassName("okdangnhap")[0];
 let thoat = document.createElement("div");
@@ -8,6 +8,7 @@ let allThongTin = document.getElementsByClassName("content")[0];
 let timkiemtheobang = document.getElementsByClassName("timkiem2")[5];
 let timkiemserch = document.getElementById("thetimkiem");
 let linksp = document.getElementById("linksp");
+let dangnhap=0;
 //Đăng xuất
 thoat.onclick = function () {
     let dangxuat = new XMLHttpRequest();
@@ -16,7 +17,7 @@ thoat.onclick = function () {
             dieuhuong.click();
         }
     }
-    dangxuat.open("GET", "././php/dangxuat.php", true);
+    dangxuat.open("GET", "./php/dangxuat.php", true);
     dangxuat.send();
 }
 //Sự kiện xảy ra khi load trang
@@ -25,7 +26,8 @@ window.onload = function () {
     let lay_user = new XMLHttpRequest();
     lay_user.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            user = this.responseText;
+            let user = this.responseText;
+            console.log(user);
             if (user != "") {
                 // console.log(user);
                 dn.remove();
@@ -43,11 +45,10 @@ window.onload = function () {
                     linksp.click();
                 }
             } else {
-                console.log(khungdn);
             }
         }
     }
-    lay_user.open("GET", "././php/temp.txt", true);
+    lay_user.open("GET", "./php/dangnhap1.php", true);
     lay_user.send();
 }
 //Tìm kiếm thông tin theo thẻ chọn
