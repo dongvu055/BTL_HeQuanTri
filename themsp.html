@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thêm sản phẩm</title>
+    <meta charset="utf8">
+    <meta>
+    <link rel="stylesheet" href="././css/themsp.css">
+</head>
+
+<body>
+    <div id="container">
+        <div>Thêm thông tin sản phẩm</div>
+        <form role="form" action="././php/themsanpham.php" method="POST" enctype="multipart/form-data">
+            <label>Hãng sản xuất :</label><input type="text" id="input1" placeholder="Nhập văn bản thường" name="producer"><br>
+            <label>Tên sản phẩm :</label><input type="text" id="input2" placeholder="Nhập văn bản thường" name="phoneName"><br>
+            <label>RAM :</label><input type="text" id="input3" placeholder="Nhập số" name="RAM"><br>
+            <label>Giá trên thị trường :</label><input type="text" id="input4" placeholder="Nhập số" name="price"><br>
+            <label>Bộ nhớ trong :</label><input type="text" id="input5" placeholder="Nhập số" name="memory"><br>
+            <label>Dung lượng pin :</label><input type="text" id="input6" placeholder="Nhập số" name="pin"><br>
+            <label class="themanh">Ảnh :</label><input type="file" name="file" id="file">
+            <button id="gui" type="submit" name="submit">Xác nhận</button>
+        </form>
+    </div>
+    <!-- <script src="././js/themsp.js"></script> -->
+</body>
+
+</html>

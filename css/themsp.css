@@ -1,0 +1,67 @@
+#container
+{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:beige;
+    border: solid 2px teal;
+    padding: 20px;
+    height: 550px;
+}
+#container > div{
+    font-size: 45px;
+    color:darkblue;
+    text-align: center;
+    text-shadow: 2px 2px 4px;
+    /* background-color: blanchedalmond; */
+    /* border: solid 2px crimson;
+    border-radius: 5px; */
+    padding: 5px;
+    margin: 10px;
+}
+label{
+    font-size: 20px;
+    color:blue;
+    float: left;
+    /* border: solid 2px crimson;
+    border-radius: 5px; */
+    padding: 5px;
+    margin: 10px;
+}
+input{
+    font-size: 20px;
+    color:blue;
+    background-color: blanchedalmond;
+    border: solid 2px crimson;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    float: right;
+}
+#gui{
+    clear: both;
+    border: solid 2px teal;
+    border-radius:5px;
+    text-align: center;
+    background-color: lightseagreen;
+    position: relative;
+    top: 320px;
+    left: 120px;
+    padding:10px;
+    cursor:pointer;
+}
+
+/* #thethongbao{
+    position: relative;
+    top: 90px;
+    left: 150px;
+    width: 180px;
+    color: red;
+} */
+
+.themanh{
+    clear: both;
+    text-align: center;
+    position: relative;
+    top: 7px;
+}

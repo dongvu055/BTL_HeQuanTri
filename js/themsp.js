@@ -1,0 +1,11 @@
+// let input1 = document.getElementById("input1");
+// let input2 = document.getElementById("input2");
+// let input3 = document.getElementById("input3");
+// let input4 = document.getElementById("input4");
+// let input5 = document.getElementById("input5");
+// let input6 = document.getElementById("input6");
+// let xacnhan = document.getElementById("xacnhan");
+// let themthongbao = document.getElementById("container");
+// let thethongbao = document.createElement("p");
+// let gui = document.getElementById("gui");
+// thethongbao.id = "thethongbao";
