@@ -17,13 +17,13 @@
         $result1 = mysqli_query($conn,$sql1);
         if($result1)
         {
-            echo "Co";
+            $trangthai=1;
         }else{
-            echo "Khong";
+            $trangthai=0;
         }
     }
     else{
-        echo "Khong";
+        $trangthai=0;
     }
-
+    echo $trangthai;
     mysqli_close($conn);

@@ -12,7 +12,7 @@ dn.onclick = function () {
             console.log(res_1);
             tk.value = null;
             mk.value = null;
-            if (res_1 == "Co") {
+            if (res_1 == 1) {
                 chuyenhuong.click();
             } else {
                 console.log("Chua duoc");

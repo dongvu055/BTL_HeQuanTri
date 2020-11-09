@@ -92,4 +92,5 @@
     
     $mangtrave = json_encode($mang1);
     echo $mangtrave;
+    mysqli_close($conn);
     

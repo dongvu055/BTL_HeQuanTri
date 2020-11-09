@@ -116,13 +116,15 @@ timkiemtheobang.onclick = function () {
                     the.appendChild(img);
                     the.appendChild(thongtin);
                     img.src = "././image/" + dltv[dli][4];
+                    img.names = dltv[dli][4];
                     the.appendChild(img);
                     allThongTin.appendChild(the);
                     // console.log("da load anh");
                 }
+                //Thêm hiệu ứng mờ cho thẻ
                 for(let dohoa = 0 ; dohoa <dltv.length ; dohoa ++)
                 {
-                    console.log(allThongTin.childNodes[dohoa]);
+                    //console.log(allThongTin.childNodes[dohoa]);
                     allThongTin.childNodes[dohoa].onmouseover = function ()
                     {
                         allThongTin.childNodes[dohoa].style.opacity = 0.5;
@@ -130,6 +132,26 @@ timkiemtheobang.onclick = function () {
                     allThongTin.childNodes[dohoa].onmouseout = function()
                     {
                         allThongTin.childNodes[dohoa].style.opacity=1;
+                    }
+                    //Chuyển sang file showthongtin.html để hiển thị thông tin chi tiết của sản phẩm
+                    allThongTin.childNodes[dohoa].onclick = function ()
+                    {
+                        //console.log(allThongTin.childNodes[dohoa].childNodes[1].names);
+                        let ttanh = allThongTin.childNodes[dohoa].childNodes[1].names;
+                        //console.log(ttanh);
+                        let guianhlensv = new XMLHttpRequest();
+                        guianhlensv.onreadystatechange = function()
+                        {
+                            if(this.readyState == 4 && this.status == 200)
+                            {
+                                console.log(this.responseText);
+                                let ahref = document.createElement("a");
+                                ahref.href = "./showthongtin.html";
+                                ahref.click();
+                            }
+                        }
+                        guianhlensv.open("GET","././php/guianhlentemp.php?anhguilen="+ ttanh,true);
+                        guianhlensv.send();
                     }
                 }
             }else

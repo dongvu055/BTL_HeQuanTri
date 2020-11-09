@@ -21,7 +21,7 @@
         {
             move_uploaded_file($tmp_image,'../image/'. $nameImage);
             echo "Thêm sản phẩm thành công <br>";
-            echo "<a href='../index.html'>Về trang chủ</a>";
+            echo "<a id='test' href='../index.html'>Về trang chủ</a>";
         }else{
             echo "Thêm ảnh thất bại";
         }
