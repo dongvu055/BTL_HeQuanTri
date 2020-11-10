@@ -8,7 +8,7 @@ let allThongTin = document.getElementsByClassName("content")[0];
 let timkiemtheobang = document.getElementsByClassName("timkiem2")[5];
 let timkiemserch = document.getElementById("thetimkiem");
 let linksp = document.getElementById("linksp");
-let dangnhap=0;
+let dangnhap = 0;
 //Đăng xuất
 thoat.onclick = function () {
     let dangxuat = new XMLHttpRequest();
@@ -39,8 +39,7 @@ window.onload = function () {
                 khungdn.appendChild(themsp);
                 khungdn.appendChild(username);
                 khungdn.appendChild(thoat);
-                themsp.onclick = function()
-                {
+                themsp.onclick = function () {
                     console.log(themsp);
                     linksp.click();
                 }
@@ -122,40 +121,33 @@ timkiemtheobang.onclick = function () {
                     // console.log("da load anh");
                 }
                 //Thêm hiệu ứng mờ cho thẻ
-                for(let dohoa = 0 ; dohoa <dltv.length ; dohoa ++)
-                {
+                for (let dohoa = 0; dohoa < dltv.length; dohoa++) {
                     //console.log(allThongTin.childNodes[dohoa]);
-                    allThongTin.childNodes[dohoa].onmouseover = function ()
-                    {
+                    allThongTin.childNodes[dohoa].onmouseover = function () {
                         allThongTin.childNodes[dohoa].style.opacity = 0.5;
                     }
-                    allThongTin.childNodes[dohoa].onmouseout = function()
-                    {
-                        allThongTin.childNodes[dohoa].style.opacity=1;
+                    allThongTin.childNodes[dohoa].onmouseout = function () {
+                        allThongTin.childNodes[dohoa].style.opacity = 1;
                     }
                     //Chuyển sang file showthongtin.html để hiển thị thông tin chi tiết của sản phẩm
-                    allThongTin.childNodes[dohoa].onclick = function ()
-                    {
+                    allThongTin.childNodes[dohoa].onclick = function () {
                         //console.log(allThongTin.childNodes[dohoa].childNodes[1].names);
                         let ttanh = allThongTin.childNodes[dohoa].childNodes[1].names;
                         //console.log(ttanh);
                         let guianhlensv = new XMLHttpRequest();
-                        guianhlensv.onreadystatechange = function()
-                        {
-                            if(this.readyState == 4 && this.status == 200)
-                            {
+                        guianhlensv.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
                                 console.log(this.responseText);
                                 let ahref = document.createElement("a");
                                 ahref.href = "./showthongtin.html";
                                 ahref.click();
                             }
                         }
-                        guianhlensv.open("GET","././php/guianhlentemp.php?anhguilen="+ ttanh,true);
+                        guianhlensv.open("GET", "././php/guianhlentemp.php?anhguilen=" + ttanh, true);
                         guianhlensv.send();
                     }
                 }
-            }else
-            {
+            } else {
                 let thongbao = document.createElement("span");
                 thongbao.innerHTML = "Không có thông tin về điện thoại";
                 allThongTin.appendChild(thongbao);
@@ -165,16 +157,14 @@ timkiemtheobang.onclick = function () {
     guidl.open("GET", "././php/timkiemtheobang.php?guidl=" + chuoiso2, true);
     guidl.send();
 }
-timkiemserch.onkeyup = function()
-{
-    allThongTin.innerHTML = ""
+timkiemserch.onkeyup = function () {
+    
     let valuekey = timkiemserch.value;
     console.log(valuekey);
-    let reskey = new XMLHttpRequest();
-    reskey.onreadystatechange = function()
-    {
-        if(this.readyState == 4 && this.status == 200)
-        {
+    allThongTin.innerHTML = "";
+    let reskey = new XMLHttpRequest()
+    reskey.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
             let dltv = JSON.parse(this.responseText);
             // console.log($dltv);
             // console.log($dltv.length);
@@ -187,18 +177,45 @@ timkiemserch.onkeyup = function()
                     the.appendChild(img);
                     the.appendChild(thongtin);
                     img.src = "././image/" + dltv[dli][4];
+                    img.names = dltv[dli][4];
                     the.appendChild(img);
                     allThongTin.appendChild(the);
                     // console.log("da load anh");
                 }
-            }else
-            {
+                //Thêm hiệu ứng mờ cho thẻ
+                for (let dohoa = 0; dohoa < dltv.length; dohoa++) {
+                    //console.log(allThongTin.childNodes[dohoa]);
+                    allThongTin.childNodes[dohoa].onmouseover = function () {
+                        allThongTin.childNodes[dohoa].style.opacity = 0.5;
+                    }
+                    allThongTin.childNodes[dohoa].onmouseout = function () {
+                        allThongTin.childNodes[dohoa].style.opacity = 1;
+                    }
+                    //Chuyển sang file showthongtin.html để hiển thị thông tin chi tiết của sản phẩm
+                    allThongTin.childNodes[dohoa].onclick = function () {
+                        //console.log(allThongTin.childNodes[dohoa].childNodes[1].names);
+                        let ttanh = allThongTin.childNodes[dohoa].childNodes[1].names;
+                        //console.log(ttanh);
+                        let guianhlensv = new XMLHttpRequest();
+                        guianhlensv.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                console.log(this.responseText);
+                                let ahref = document.createElement("a");
+                                ahref.href = "./showthongtin.html";
+                                ahref.click();
+                            }
+                        }
+                        guianhlensv.open("GET", "././php/guianhlentemp.php?anhguilen=" + ttanh, true);
+                        guianhlensv.send();
+                    }
+                }
+            } else {
                 let thongbao = document.createElement("span");
                 thongbao.innerHTML = "Không có thông tin về điện thoại";
                 allThongTin.appendChild(thongbao);
             }
         }
     }
-    reskey.open("GET","././php/congcutimkiem.php?tkiem=" + valuekey,true);
+    reskey.open("GET", "././php/congcutimkiem.php?tkiem=" + valuekey, true);
     reskey.send();
 }
